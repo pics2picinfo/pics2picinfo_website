@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Build output (deploy separately when needed)
+dist/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# Certificates and private keys
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+
+# Logs and local tooling
+*.log
+.vscode/
+.DS_Store
+Thumbs.db
