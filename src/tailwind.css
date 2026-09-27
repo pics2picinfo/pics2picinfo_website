@@ -106,6 +106,7 @@ nav button.active {
     isolation: isolate;
     min-height: min(760px, calc(100vh - 84px));
     overflow: hidden;
+  aspect-ratio: 16 / 9;
 }
 
 .hero::after {
@@ -136,22 +137,10 @@ nav button.active {
   object-position: center 56%;
 }
 
-.hero-slide-2 .hero-media {
-  animation-name: hero-image-in-wide;
-  transform: scale(1.12);
-  object-position: center 48%;
-}
-
 @keyframes hero-image-in {
   from { opacity: 1; transform: scale(1.035); }
   to { opacity: 1; transform: scale(1); }
 }
-
-@keyframes hero-image-in-wide {
-  from { opacity: 1; transform: scale(1.15); }
-  to { opacity: 1; transform: scale(1.12); }
-}
-
 
 .hero-content {
   max-width: 1180px;
@@ -228,16 +217,14 @@ nav button.active {
 .service-image img,
   .portfolio-item img,
   .gallery-grid article img,
-  .category-card img,
-  .team-grid img {
+  .category-card img {
     transition: transform .6s cubic-bezier(.2, .7, .2, 1), filter .6s ease;
 }
 
 .service-card:hover img,
   .portfolio-item:hover img,
   .gallery-grid article:hover img,
-  .category-card:hover img,
-  .team-grid img:hover {
+  .category-card:hover img {
     filter: saturate(1.08);
     transform: scale(1.045);
 }
@@ -342,16 +329,6 @@ nav button.active {
 
 .process-list {
   margin-top: 70px;
-}
-
-.team-strip {
-  padding-bottom: 150px;
-  padding-top: 100px;
-}
-
-.team-grid {
-  gap: 10px;
-  margin-top: 28px;
 }
 
 .service-page-grid {
@@ -581,7 +558,6 @@ nav button.active {
 .portfolio-item img {
   aspect-ratio: 4 / 3;
   flex: 0 0 auto;
-  height: auto;
   object-fit: cover;
   width: 100%;
 }
@@ -688,6 +664,129 @@ nav button.active {
   border-top: 1px solid rgba(255, 255, 255, .12);
 }
 
+.contact-page {
+  align-items: center;
+  gap: clamp(54px, 8vw, 120px);
+  min-height: 760px;
+  padding-bottom: 170px;
+  padding-top: 145px;
+}
+
+.contact-intro {
+  position: relative;
+}
+
+.contact-intro::before {
+  background: var(--yellow);
+  content: '';
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: -30px;
+  width: 54px;
+}
+
+.contact-lead {
+  font-size: 16px;
+  line-height: 1.75;
+  max-width: 410px;
+}
+
+.contact-details {
+  gap: 8px;
+  margin-top: 48px;
+  padding-top: 24px;
+}
+
+.contact-details strong {
+  font-size: 11px;
+}
+
+.contact-details span {
+  font-size: 15px;
+}
+
+.contact-details a {
+  font-size: 20px;
+}
+
+.contact-phone-links {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.contact-phone-links a:first-child {
+  color: var(--blue);
+}
+
+.contact-showcase {
+  background: var(--night);
+  min-height: 560px;
+  overflow: hidden;
+  position: relative;
+}
+
+.contact-showcase-image {
+  inset: 0;
+  position: absolute;
+}
+
+.contact-showcase-image img {
+  height: 100%;
+  min-height: 0;
+  width: 100%;
+  transition: transform .7s ease;
+}
+
+.contact-showcase::after {
+  background: linear-gradient(90deg, rgba(9, 18, 24, .9), rgba(9, 18, 24, .58) 52%, rgba(9, 18, 24, .12));
+  content: '';
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.contact-showcase:hover .contact-showcase-image img {
+  transform: scale(1.04);
+}
+
+.contact-showcase-copy {
+  color: #fff;
+  max-width: 470px;
+  padding: clamp(34px, 5vw, 66px) clamp(28px, 5vw, 58px);
+  position: relative;
+  z-index: 1;
+}
+
+.contact-showcase-copy h2 {
+  font-size: clamp(34px, 4vw, 56px);
+  line-height: 1;
+}
+
+.contact-showcase-copy .eyebrow {
+  color: var(--yellow);
+}
+
+.contact-showcase-copy > p:not(.eyebrow) {
+  color: rgba(255, 255, 255, .86);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .contact-page {
+    min-height: 0;
+    padding-bottom: 120px;
+    padding-top: 110px;
+  }
+
+  .contact-showcase {
+    min-height: 500px;
+  }
+}
+
 .site-footer .eyebrow {
   color: var(--yellow);
   margin-bottom: 18px;
@@ -717,6 +816,21 @@ nav button.active {
   border-color: var(--yellow);
   color: var(--night);
   transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .pricing-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contact-showcase {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 450px;
+  }
+
+  .contact-showcase-copy {
+    padding: 32px 24px;
+  }
 }
 
 .social-links a span {
@@ -754,15 +868,6 @@ nav button.active {
 .footer-email {
   display: inline-block;
   margin-top: 12px;
-}
-
-.instagram-grid {
-  gap: 8px;
-}
-
-.instagram-grid img {
-  aspect-ratio: 1;
-  border: 1px solid rgba(255, 255, 255, .12);
 }
 
 .footer-bottom {
