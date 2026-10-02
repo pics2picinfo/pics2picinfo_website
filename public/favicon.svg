@@ -1,4 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect x="3" y="3" width="58" height="58" fill="#101820" stroke="#e7b84b" stroke-width="3" />
-  <text x="32" y="42" fill="#e7b84b" font-family="Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="-2" text-anchor="middle">P2P</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Pics2Pic favicon">
+  <defs>
+    <linearGradient id="p2pGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#F7C873" />
+      <stop offset="100%" stop-color="#D98B39" />
+    </linearGradient>
+  </defs>
+
+  <rect width="128" height="128" rx="28" fill="#121A24" />
+  <rect x="10" y="10" width="108" height="108" rx="24" fill="none" stroke="url(#p2pGradient)" stroke-width="4" />
+  <text x="64" y="82" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="48" letter-spacing="-4">
+    <tspan fill="#F5F3EE">P</tspan>
+    <tspan fill="url(#p2pGradient)">2</tspan>
+    <tspan fill="#F5F3EE">P</tspan>
+  </text>
 </svg>
